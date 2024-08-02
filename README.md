@@ -24,3 +24,14 @@ It batches up the things it wants to launch in to threads so it doesn't overwhel
 
 
 "I received assistance from an AI developed by OpenAI, utilized through the University of Michigan."
+
+# THIS JUST IN!
+Its possible that 
+```
+find . -type f -not -name "*.md5" -not -path '*/\.*' -print0 | xargs -0 -P 4 md5sum | tee -a the.md5
+
+```
+is faster to create the MD5 file; unsure if there is an equivelent for verifying a file? Maybe:
+```
+cat the.md5 | parallel --pipe -N10 md5sum -c -
+```
