@@ -20,4 +20,4 @@ If you want to include hidden ("dot") files and dirs when you create the md5, yo
 
 When you verify, you can tell it to keep going if it hits a checksum that doesn't compare properly (or a missing file). It will still die horribly at the end, but that's what I want it to do.
 
-It batches up the things it wants to launch in to threads so it doesn't overwhelm your box or take too long to get started. You can specify the read chunk size (it makes a good guess based on your filesystem if you leave it alone). You can specify more or less simultaneous worker threads, but I found that 5 worked well on both my mac and on our supercomputer cluster. 
+It batches up the things it wants to launch in to threads so it doesn't overwhelm your box or take too long to get started. You can specify the read chunk size (it makes a good guess based on your filesystem if you leave it alone). You can specify more or less simultaneous worker threads, but I found that 5 worked well on both my mac and on our supercomputer cluster. If you play with anything here, I'd suggest trying `-read-size 32767` to see if if flies faster.
